@@ -26,9 +26,7 @@ def simple_server(port):
     server_sock.bind(('127.0.0.1', port))
     server_sock.listen(0)
     server_sock.settimeout(1)
-    print('about to accept')
     server_sock.accept()
-    print('closing')
     server_sock.close()
 
 
