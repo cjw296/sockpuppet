@@ -1,9 +1,10 @@
-import socket, threading
+import socket
 from unittest import TestCase
 
 from testfixtures import ShouldRaise
 
 from sockpuppet.ports import find_free_port, wait_for_server
+from .helpers import WithServer
 
 
 class TestFindFreePort(TestCase):
@@ -21,25 +22,7 @@ class TestFindFreePort(TestCase):
         s.close()
 
 
-def simple_server(port):
-    server_sock = socket.socket()
-    server_sock.bind(('127.0.0.1', port))
-    server_sock.listen(0)
-    server_sock.settimeout(1)
-    server_sock.accept()
-    server_sock.close()
-
-
-class TestWaitForServer(TestCase):
-
-    def setUp(self):
-        self.port = find_free_port()
-
-    def start_server(self, port):
-        server_thread = threading.Thread(target=simple_server,
-                                         args=(port,))
-        server_thread.start()
-        self.addCleanup(server_thread.join)
+class TestWaitForServer(WithServer, TestCase):
 
     def test_there(self):
         self.start_server(self.port)
