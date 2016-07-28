@@ -24,5 +24,10 @@ setup(
         test=['nose', 'nose-cov', 'nose-fixes',
               'testfixtures', 'mock', 'coveralls', 'manuel'],
         build=['sphinx', 'pkginfo', 'setuptools-git']
-    )
+    ),
+    entry_points = {
+        'console_scripts': [
+            'sockpuppet = sockpuppet.cli:main',
+        ],
+    }
 )
