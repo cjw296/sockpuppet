@@ -22,7 +22,7 @@ class TestCLI(WithServer, TestCase):
             self.fail('for %r, rc expected %i but was %i:\n%s' % (
                 cmd, expected_returncode, rc, output
             ))
-        return output
+        return output.decode('ascii')
 
     def test_defaults(self):
         self.start_server()
