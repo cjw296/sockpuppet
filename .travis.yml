@@ -26,6 +26,6 @@ deploy:
   on:
     tags: true
     repo: cjw296/sockpuppet
-    python: "3.5"
+    python: "3.6"
   skip_cleanup: true
   distributions: "sdist bdist_wheel"
