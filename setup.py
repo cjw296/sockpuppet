@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='sockpuppet',
-    version='0.2.0',
+    version='0.2.1',
     author='Chris Withers',
     author_email='chris@withers.org',
     license='MIT',
@@ -18,7 +18,7 @@ setup(
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
     ],
-    packages=find_packages(),
+    packages=find_packages(exclude=['tests']),
     include_package_data=True,
     extras_require=dict(
         test=['nose', 'nose-cov', 'nose-fixes',
