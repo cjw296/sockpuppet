@@ -8,7 +8,7 @@ setup(
     license='MIT',
     description="Tools for integration tests involving real ports",
     # long_description=open('docs/description.rst').read(),
-    url='http://sockpuppet.readthedocs.org',
+    url='https://github.com/cjw296/sockpuppet',
     classifiers=[
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
